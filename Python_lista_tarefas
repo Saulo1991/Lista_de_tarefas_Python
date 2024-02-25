@@ -1,0 +1,53 @@
+tarefas_adicionadas = []
+
+def add_nova_tarefa(tarefa):
+    if tarefa:
+        tarefas_adicionadas.append(tarefa)
+    return tarefas_adicionadas
+
+def remover_tarefa(tarefa):
+    if tarefa in tarefas_adicionadas:
+        tarefas_adicionadas.remove(tarefa)
+    
+def listar_tarefas():
+    return tarefas_adicionadas
+
+def marcar_tarefas_concluida(tarefa):
+    if tarefa in tarefas_adicionadas:
+        return 'Conclído'
+    else:
+        return 'Não-concluído'
+
+while True:
+    print("Escolha a opção correta: ")
+    print("1. Adicionar tarefa: ")
+    print("2. Remover tarefa: ")
+    print("3. Listar tarefas: ")
+    print("4. Marcar tarefas: ")
+
+    opcao = input("Digite uma opção: ")
+
+    if opcao == '1':
+        tarefa = input("Digite uma nova tarefa: ")
+        add_nova_tarefa(tarefa)
+        break
+    elif opcao == '2':
+        tarefa = input("Digite a tarefa a ser removida")
+        remover_tarefa(tarefa)
+        break
+    elif opcao == '3':
+        print("Tarefas:")
+        print(listar_tarefas())
+        break
+    elif opcao == '4':
+        tarefa = input("Digite a tarefa a ser marcada: ")
+        print(marcar_tarefas_concluida(tarefa))
+        break
+    else:
+        print("opção inválida. Por favor, escolha uma opção válida")
+
+
+
+
+# var
+#     funcao add_nova_tarefa, funcao remover_tarefa, funcao listar_tarefas, funcao marcar_tarefa_concluida
